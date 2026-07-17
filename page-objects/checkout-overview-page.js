@@ -1,7 +1,7 @@
 export class CheckoutOverviewPage {
     constructor(page) {
         this.page = page;
-        this.finishButton = page.getByRole('link', { name: 'FINISH' });
+        this.finishButton = page.locator('[data-test="finish"]');
     }
 
     async finishCheckout() {

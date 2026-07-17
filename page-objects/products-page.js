@@ -5,10 +5,11 @@ export class ProductsPage {
     }
 
     async addItemToCart(price) {
-        await this.page.locator('div').filter({ hasText: new RegExp(`^\\${price}ADD TO CART$`) }).getByRole('button').click();
+        const productCard = this.page.locator('.inventory_item').filter({ hasText: price });
+        await productCard.getByRole('button', { name: 'ADD TO CART' }).click();
     }
 
     async goToCart() {
-        await this.page.getByRole('link', { name: '2' }).click();
+        await this.page.locator('.shopping_cart_link').click();
     }
 } 
