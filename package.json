@@ -5,7 +5,7 @@
   "scripts": {
     "test": "cucumber-js",
     "test:e2e": "cucumber-js features/end-to-end.feature",
-    "test:report": "node -e \"require('fs').mkdirSync('reports',{recursive:true});\" && cucumber-js features/end-to-end.feature --format @cucumber/html-formatter:reports/cucumber-report.html"
+    "test:report": "node -e \"require('fs').mkdirSync('reports',{recursive:true});\" && cucumber-js features/end-to-end.feature --format html:reports/cucumber-report.html"
   },
   "keywords": [],
   "author": "",

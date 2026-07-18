@@ -30,9 +30,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Generate HTML report
-        run: |
-          mkdir -p reports
-          npx cucumber-js features/end-to-end.feature --format @cucumber/html-formatter:reports/cucumber-report.html
+        run: npm run test:report
 
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
