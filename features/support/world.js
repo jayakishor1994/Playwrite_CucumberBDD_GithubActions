@@ -36,7 +36,8 @@ let browser;
 
 BeforeAll(async function () {
     console.log('Before All hook');
-    browser = await chromium.launch({ headless: false, slowMo: 100 });
+    const isCi = process.env.CI === 'true';
+    browser = await chromium.launch({ headless: isCi, slowMo: isCi ? 0 : 100 });
 });
 
 AfterAll(async function () {
